@@ -1,0 +1,96 @@
+/* Layout */
+
+
+body{
+    font-family: 'Smythe',Verdana, Geneva, Tahoma, sans-serif;
+    margin:0;
+
+}
+
+header{
+    background-image: url("/images/background-img.jpeg");
+  
+    height: 167PX;
+    padding: 80px;
+    background-size: cover;
+    background-position: center;
+  
+  }
+ 
+
+  #container{
+    display: flex;
+    flex-direction: column;
+   
+    border: 1px solid black;
+  
+    
+  }
+
+  .menu{
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+
+
+  
+    
+  }
+.menu-img{
+   margin: auto 0px;
+   font-size:100px;
+   width: 100px;
+ 
+
+
+}
+
+.item-info{
+
+    min-width: 30%;
+    padding: 20px;
+}
+
+.add-icon{
+    border: 2px solid #b8b8b8;
+    padding: 25px;
+    margin:auto 0px;
+    border-radius: 80px;
+    cursor: pointer;
+  
+    
+    
+}
+
+.add-icon:hover{
+    background-color: grey;
+}
+
+.item-name, .item-price{
+    font-size: 28px;
+    line-height: 16px;
+ 
+}
+
+.item-contains{
+    font-size: 20px;
+    line-height: 24px;
+    color: #8B8B8B;
+}
+
+
+  /* Typography */
+h1{
+    font-size: 40px;
+    color: white;
+    line-height: 25px;
+    font-weight: 400;
+}
+h2{
+    font-size: 23px;
+    color: white;
+    line-height: 14px;
+    font-weight: 400;
+}
