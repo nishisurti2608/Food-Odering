@@ -33,7 +33,14 @@ function displayOrder(order) {
   if (order.length > 0) {
     orderDetailsHtml += `<div class="price">
                         <h1>Total Price:</h1>
-                        <p class="rate">${order.}</p>
+                
+                        <p class="rate"> ${order.reduce(
+                          (newTotal, currentPrice) => {
+                            return newTotal + currentPrice.price;
+                          },
+                          0
+                        )}</p>
+                       
                         </div>
                         `;
   }
