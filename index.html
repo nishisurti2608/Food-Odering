@@ -14,7 +14,7 @@
          <link href="https://fonts.googleapis.com/css2?family=Smythe&display=swap" rel="stylesheet">
          <script src="index.js" type="module"></script>
 
-
+        </head>
 
         <body>
             <header>
@@ -22,17 +22,38 @@
                 <h2>The best burgers and pizza in town.</h2>
             </header>
             <main>
-                <div id="container">
+                   
+                         <div id="container">
+                                           
+                                             </div>
+                         
+                                             <div id="order-details">
+                          
+                                             </div>
                   
-                    </div>
-
-                    <div id="order-details">   
+                    <form id="pay-form">
+                        <div class="close-card-btn-container">
+                            <button id="card-close-btn">X</button>
+                        </div>
+                     
+                        <h1>Enter card details</h1>
+                     
+                        
+                        <input type="text" id="name" name="fullName" placeholder="Enter your full name" required/>
                       
-                    </div>
+       
+                        <input id="ccn" type="tel" inputmode="numeric" pattern="[0-9\s]{13,19}" 
+                        autocomplete="cc-number" maxlength="19" 
+                        placeholder="xxxx xxxx xxxx xxxx" required>
+                        <input name="credit-cvc" class="cc-cvc" type="tel" pattern="\d*" maxlength="4" placeholder="CVC">
+                        <button type="submit" id="pay-btn" class="btn">Pay</button>
+        
                     
-            
+        
+                    </form>
+               
             </main>
         </body>
       
-    </head>
+   
 </html>
