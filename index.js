@@ -19,33 +19,49 @@ function handleAddtoCart(itemId) {
 function displayOrder(order) {
   let orderDetailsHtml = "";
   orderDetailsHtml += ` 
-                        <div class="price">
-                    
+                     
+                     <h1>Your Order</h1>
                             ${order
                               .map((item) => {
-                                return `<h1>${item.name}<span class="remove">remove</span> <span class="rate">$${item.price}</span></h1>  
+                                return `  <div class="menu-items">
+                                             <div class="item-row">
+                                               <span class="item-name">${item.name} <span class="remove">remove</span></span>
+                                               
+                                             <div class="item-actions">
+                                               
+                                                 <span class="rate">$${item.price}</span>
+                                              </div>
+                                             </div>
+                                           </div>
                                `;
                               })
                               .join("")}
                           
-                        </div>`;
+                    `;
 
   if (order.length > 0) {
-    orderDetailsHtml += `<div class="price">
-                        <h1>Total Price:</h1>
+    orderDetailsHtml += `<div class="total">
+             <hr>
+                       
+                       
                 
-                        <p class="rate"> ${order.reduce(
+                   
+            
+                        <h1>Total Price:$ ${order.reduce(
                           (newTotal, currentPrice) => {
                             return newTotal + currentPrice.price;
                           },
                           0
-                        )}</p>
+                        )}</h1>
+              
                        
+                        <button class="btn">Complete Order</button>
                         </div>
                         `;
   }
   document.getElementById("order-details").innerHTML = orderDetailsHtml;
 }
+//rendering menu on page
 
 const menuItems = menuArray
   .map((item) => {
@@ -75,8 +91,8 @@ const menuItems = menuArray
   })
   .join("");
 
-function render() {
+function renderMenu() {
   document.getElementById("container").innerHTML += menuItems;
 }
 
-render();
+renderMenu();
