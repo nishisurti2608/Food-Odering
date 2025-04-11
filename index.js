@@ -2,6 +2,7 @@ import { menuArray } from "./data.js";
 let order = []; //saving user order in this array in Object format
 const formEl = document.getElementById("pay-form");
 const mainContent = document.getElementById("main-content");
+const orderDetailsEl = document.getElementById("order-details");
 
 //Step:1 -> creating UI as per the array which we received and adding data-set to + button
 
@@ -77,6 +78,8 @@ function handleAddtoCart(itemId) {
 // step:6 Displaying users order if user added items in cart and also added  data-set for remove
 
 function displayOrder(order) {
+  if (!orderDetailsEl) return;
+
   let orderDetailsHtml = "";
   if (order.length > 0) {
     orderDetailsHtml += ` <h1>Your Order</h1>
@@ -133,7 +136,7 @@ function displayOrder(order) {
                           `;
   }
 
-  document.getElementById("order-details").innerHTML = orderDetailsHtml;
+  orderDetailsEl.innerHTML = orderDetailsHtml;
 }
 
 // step:7 - add remove functionality
@@ -157,9 +160,7 @@ document
 //   step:11 on PAY button click change div
 
 document.getElementById("pay-btn").addEventListener("click", function () {
-  document.getElementById(
-    "order-details"
-  ).innerHTML = `<div id="complete">"Thanks, James! Your Oder is on its way!"</div>`;
+  orderDetailsEl.innerHTML = `<div id="complete">"Thanks, James! Your Oder is on its way!"</div>`;
   formEl.style.display = "none";
   mainContent.classList.remove("blurred");
 });
