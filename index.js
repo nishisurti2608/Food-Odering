@@ -1,6 +1,7 @@
 import { menuArray } from "./data.js";
 let order = []; //saving user order in this array in Object format
 const formEl = document.getElementById("pay-form");
+const mainContent = document.getElementById("main-content");
 
 //Step:1 -> creating UI as per the array which we received and adding data-set to + button
 
@@ -57,6 +58,7 @@ document.addEventListener("click", function (e) {
   // step: 9 - open card-details popup on complete order button click
   if (e.target.id === "order-btn") {
     formEl.style.display = "flex";
+    mainContent.classList.add("blurred");
   }
 });
 
@@ -149,6 +151,7 @@ document
   .getElementById("card-close-btn")
   .addEventListener("click", function () {
     formEl.style.display = "none";
+    mainContent.classList.remove("blurred");
   });
 
 //   step:11 on PAY button click change div
@@ -158,4 +161,5 @@ document.getElementById("pay-btn").addEventListener("click", function () {
     "order-details"
   ).innerHTML = `<div id="complete">"Thanks, James! Your Oder is on its way!"</div>`;
   formEl.style.display = "none";
+  mainContent.classList.remove("blurred");
 });
